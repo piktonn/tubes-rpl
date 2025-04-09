@@ -169,19 +169,11 @@
 								</tr>
 							</thead>
 							<tbody class="order-details-body">
-								<tr>
-									<td>Product</td>
-									<td>Total</td>
-								</tr>
-								<tr>
-									<td>Telur</td>
-									<td>Rp 55.000</td>
-								</tr>
 							</tbody>
 							<tbody class="checkout-details">
 								<tr>
 									<td>Subtotal</td>
-									<td>Rp 55.000</td>
+									<td>Rp</td>
 								</tr>
 								<tr>
 									<td>Ongkos Pengiriman</td>
@@ -189,7 +181,7 @@
 								</tr>
 								<tr>
 									<td>Total</td>
-									<td>Rp 65.000</td>
+									<td>Rp</td>
 								</tr>
 							</tbody>
 						</table>
@@ -307,5 +299,28 @@
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
 
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		  const data = JSON.parse(localStorage.getItem('keranjangTelur'));
+		  const ongkir = 10000;
+	  
+		  if (data) {
+			const subtotal = data.harga || 0;
+			const total = subtotal + ongkir;
+	  
+			// Isi Subtotal
+			document.querySelector(".checkout-details tr:nth-child(1) td:nth-child(2)").textContent = "Rp " + formatRupiah(subtotal);
+	  
+			// Total (Ongkir sudah tetap di HTML)
+			document.querySelector(".checkout-details tr:nth-child(3) td:nth-child(2)").textContent = "Rp " + formatRupiah(total);
+		  }
+	  
+		  function formatRupiah(angka) {
+			return angka.toLocaleString('id-ID');
+		  }
+		});
+	  </script>
+	  
+	  
 </body>
 </html>
