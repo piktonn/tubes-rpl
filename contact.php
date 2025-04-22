@@ -49,7 +49,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.php">
+							<a href="index.html">
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -60,7 +60,7 @@
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a>
 									<ul class="sub-menu">
-								<li><a href="index.php">Slider Home</a></li>
+								<li><a href="index.html">Slider Home</a></li>
 									</ul>
 								</li>
 								<li><a href="about.php">About</a></li>
@@ -210,7 +210,7 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.php">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="about.php">About</a></li>
 							<li><a href="contact.php">Contact</a></li>
 						</ul>
