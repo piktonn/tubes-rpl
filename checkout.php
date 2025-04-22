@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- title -->
-	<title>About</title>
+	<title>Checkout</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
@@ -49,7 +49,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -60,21 +60,16 @@
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a>
 									<ul class="sub-menu">
-										<li><a href="index.html">Slider Home</a></li>
+								<li><a href="index.php">Slider Home</a></li>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
+								<li><a href="about.php">About</a></li>
+								<li><a href="contact.php">Contact</a></li>
+								<li><a href="cart.php">Cart</a>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -115,8 +110,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Telur Segar Setiap Hari!</p>
-						<h1>About</h1>
+						<p>Fresh and Organic</p>
+						<h1>Checkout</h1>
 					</div>
 				</div>
 			</div>
@@ -124,80 +119,87 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- featured section -->
-	<div class="feature-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7">
-					<div class="featured-text">
-						<h2 class="pb-3">Kenapa <span class="orange-text">EggFresh</span></h2>
-						<div class="row">
-							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-shipping-fast"></i>
-									</div>
-									<div class="content">
-										<h3>Pengantaran ke Rumah</h3>
-										<p>Pesan sekarang dan nikmati layanan antar langsung ke rumah.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-money-bill-alt"></i>
-									</div>
-									<div class="content">
-										<h3>Harga Terbaik</h3>
-										<p>Dapatkan produk berkualitas dengan harga terbaik hanya di tempat kami.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-briefcase"></i>
-									</div>
-									<div class="content">
-										<h3>Kemasan Khusus</h3>
-										<p>Setiap telur dikirim dengan custom box anti pecah yang aman 
-											dan tidak pecah selama pengiriman.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-sync-alt"></i>
-									</div>
-									<div class="content">
-										<h3>Proses Refund Kilat</h3>
-										<p>Kami menjamin pengembalian dana yang cepat apabila terjadi kesalahan atau ketidaksesuaian produk. 
-											Kepuasan pelanggan adalah prioritas kami..</p>
-									</div>
-								</div>
-							</div>
+
+    <!-- Checkout Section -->
+	<div class="checkout-section mt-150 mb-150">
+    <div class="container">
+        <div class="row justify-content-center"> <!-- Menambahkan justify-content-center untuk memusatkan kolom -->
+            <div class="col-lg-8">
+                <div class="checkout-accordion-wrap">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card single-accordion">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        🧾 Ringkasan Pesanan
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <table class="table table-bordered order-summary mx-auto"> <!-- Menambahkan mx-auto untuk memusatkan tabel -->
+                                        <tr>
+                                            <th>Produk</th>
+                                            <td>Telur Ayam Negeri</td>
+                                        </tr>
+                                        <tr>
+    										<th>Jumlah</th>
+    											<td id="jumlah-produk"></td>
+										</tr>
+										<tr>
+    										<th>Subtotal</th>
+    											<td id="checkout-subtotal"></td>
+										</tr>
+										<tr>
+    										<th>Ongkir</th>
+    											<td id="checkout-ongkir"></td>
+										</tr>
+										<tr>
+    										<th><strong>Total</strong></th>
+    											<td><strong id="checkout-total"></strong></td>
+										</tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bagian Pilih Metode Pembayaran -->
+                    <div class="payment-method mt-4">
+                        <h5>💳 Pilih Metode Pembayaran:</h5>
+						<div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="qris" value="qris">
+                            <label class="form-check-label" for="qris">
+                                QRIS
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="transferBank" value="transfer">
+                            <label class="form-check-label" for="transferBank">
+                                Transfer Bank
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="cod">
+                            <label class="form-check-label" for="cod">
+                                Cash on Delivery (COD)
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Tombol Konfirmasi -->
+                    	<div class="cart-buttons">
+						<a href="cart.php#cart-section" class="boxed-btn">Edit Pesanan</a>
+						<a href="selesai.php" class="boxed-btn">Konfirmasi dan Pesan</a>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end featured section -->
-
-	<!-- shop banner -->
-	<section class="shop-banner">
-    	<div class="container">
-        	<h3>Penawaran Spesial Akhir Tahun <br> dengan diskon <span class="orange-text">BESAR...</span></h3>
-            <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
-            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
+                </div>
+            </div>
         </div>
-    </section>
-	<!-- end shop banner -->
+    </div>
+</div>
+<!-- End Checkout Section -->
 
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
+<!-- logo carousel -->
+<div class="logo-carousel-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -249,9 +251,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="about.php">About</a></li>
+							<li><a href="contact.php">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -265,7 +267,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2025 - <a href="https://piktonn.github.io/my-portofolio/">Victon Tanaka</a>,  All Rights Reserved.<br> </p>
+					<p>Copyrights &copy; 2025 - Supplier Telur Ayam Negeri Aceh</a>,  All Rights Reserved.<br> </p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
@@ -301,6 +303,31 @@
 	<script src="assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
+	
+	<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Ambil data dari localStorage
+    const jumlah = localStorage.getItem('jumlah') || '0';
+    const subtotal = localStorage.getItem('subtotal') || '0';
+    const ongkir = localStorage.getItem('ongkir') || '0';
+    const total = localStorage.getItem('total') || '0';
+
+    // Ubah format ke Rupiah
+    const formatRupiah = (angka) => {
+        return parseInt(angka).toLocaleString('id-ID', {
+            style: 'currency',
+            currency: 'IDR'
+        });
+    }
+
+    // Isi elemen-elemen di halaman checkout
+    document.getElementById('jumlah-produk').textContent = jumlah + ' kg';
+    document.getElementById('checkout-subtotal').textContent = formatRupiah(subtotal);
+    document.getElementById('checkout-ongkir').textContent = formatRupiah(ongkir);
+    document.getElementById('checkout-total').textContent = formatRupiah(total);
+});
+</script>
+
 
 </body>
 </html>

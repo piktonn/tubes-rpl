@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- title -->
-	<title>Cart</title>
+	<title>Contact</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
@@ -49,7 +49,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -60,21 +60,16 @@
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a>
 									<ul class="sub-menu">
-								<li><a href="index.html">Slider Home</a></li>
+								<li><a href="index.php">Slider Home</a></li>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
+								<li><a href="about.php">About</a></li>
+								<li><a href="contact.php">Contact</a></li>
+								<li><a href="cart.php">Cart</a>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -115,8 +110,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Fresh and Organic</p>
-						<h1>Cart</h1>
+						<p>Layanan Bantuan 24 Jam</p>
+						<h1>Contact us</h1>
 					</div>
 				</div>
 			</div>
@@ -124,97 +119,71 @@
 	</div>
 	<!-- end breadcrumb section -->
 
-	<!-- cart -->
-	<div class="cart-section mt-150 mb-150" id="cart-section">
+	<!-- contact form -->
+	<div class="contact-from-section mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-md-12">
-					<div class="cart-table-wrap">
-						<table class="cart-table">
-							<thead class="cart-table-head">
-								<tr class="table-head-row">
-									<th class="product-remove"></th>
-									<th class="product-image">Tampilan Produk</th>
-									<th class="product-name">Nama</th>
-									<th class="product-price">Harga</th>
-									<th class="product-quantity">Jumlah (Kg)</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="table-body-row">
-									<td class="product-remove">
-									<td class="product-image"><img src="assets/img/products/product-img-1.jpg" alt=""></td>
-									<td class="product-name">Telur</td>
-									<td class="product-price">Rp. </td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-								</tr>
-							</tbody>
-						</table>
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<div class="form-title">
+						<h2>Punya Pertanyaan? Kami Siap Membantu</h2>
+
+					</div>
+				 	<div id="form_status"></div>
+					<div class="contact-form">
+						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+							<p>
+								<input type="text" placeholder="Name" name="name" id="name">
+								<input type="email" placeholder="Email" name="email" id="email">
+							</p>
+							<p>
+								<input type="tel" placeholder="Phone" name="phone" id="phone">
+								<input type="text" placeholder="Subject" name="subject" id="subject">
+							</p>
+							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea></p>
+							<input type="hidden" name="token" value="FsWga4&@f6aw" />
+							<p><input type="submit" value="Submit"></p>
+						</form>
 					</div>
 				</div>
-
 				<div class="col-lg-4">
-					<div class="total-section">
-						<table class="total-table">
-							<thead class="total-table-head">
-								<tr class="table-total-row">
-									<th>Total</th>
-									<th>Harga</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="total-data">
-									<td><strong>Subtotal: </strong></td>
-									<td>Rp </td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Ongkos Pengiriman </strong></td>
-									<td>Rp 10.000</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Total: </strong></td>
-									<td>Rp </td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="cart-buttons">
-							<a href="cart.html" class="boxed-btn">Perbarui Keranjang </a>
-							<a href="checkout.html" class="boxed-btn black">Check Out</a>
+					<div class="contact-form-wrap">
+						<div class="contact-form-box">
+							<h4><i class="fas fa-map"></i> Alamat Toko</h4>
+							<p>Jalan Dipatiukur <br> Bandung, Jawa Barat <br> Indonesia</p>
+						</div>
+						<div class="contact-form-box">
+							<h4><i class="far fa-clock"></i> Jam Operasional Toko</h4>
+							<p>MON - FRIDAY: 08.00 - 21.00 WIB <br> SAT - SUN: 10.00 - 20.00 WIB </p>
+						</div>
+						<div class="contact-form-box">
+							<h4><i class="fas fa-address-book"></i> Contact</h4>
+							<p>Phone: +62 812-3456-7890 <br> Email: supplier@teluraceh.com</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end cart -->
+	<!-- end contact form -->
 
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
+	<!-- find our location -->
+	<div class="find-location blue-bg">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="logo-carousel-inner">
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/1.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/2.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/3.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/4.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/5.png" alt="">
-						</div>
-					</div>
+				<div class="col-lg-12 text-center">
+					<p> <i class="fas fa-map-marker-alt"></i> Lokasi Toko Kami</p>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end logo carousel -->
+	<!-- end find our location -->
+
+	<!-- google map section -->
+	<div class="embed-responsive embed-responsive-21by9">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.60965064788!2d107.56075490416707!3d-6.903271951728813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6398252477f%3A0x146a1f93d3e815b2!2sBandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1743766251341!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+	<!-- end google map section -->
+
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -241,11 +210,12 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="about.php">About</a></li>
+							<li><a href="contact.php">Contact</a></li>
 						</ul>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>
@@ -257,7 +227,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2025 - <a href="https://piktonn.github.io/my-portofolio/">Victon Tanaka</a>,  All Rights Reserved.<br> </p>
+					<p>Copyrights &copy; 2025 - Supplier Telur Ayam Negeri Aceh</a>,  All Rights Reserved.<br> </p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
@@ -291,67 +261,10 @@
 	<script src="assets/js/jquery.meanmenu.min.js"></script>
 	<!-- sticker js -->
 	<script src="assets/js/sticker.js"></script>
+	<!-- form validation js -->
+	<script src="assets/js/form-validate.js"></script>
 	<!-- main js -->
 	<script src="assets/js/main.js"></script>
-
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-		  const hargaPerKg = 15000;
-		  const ongkir = 10000;
-	  
-		  const jumlahInput = document.querySelector('input[type="number"]');
-		  const hargaProdukTd = document.querySelector('tbody .product-price');
-		  const subtotalTd = document.querySelectorAll('.total-data td')[1]; // Subtotal: baris kedua
-		  const totalTd = document.querySelectorAll('.total-data td')[5]; // Total: baris keempat
-		  const perbaruiBtn = document.querySelector('.cart-buttons a[href="cart.html"]');
-		  const checkoutBtn = document.querySelector('.cart-buttons a[href="checkout.html"]');
-	  
-		  // Update harga otomatis saat input jumlah diubah
-		  jumlahInput.addEventListener('input', function () {
-			const jumlah = parseFloat(jumlahInput.value) || 0;
-			const harga = jumlah * hargaPerKg;
-			hargaProdukTd.textContent = 'Rp. ' + formatRupiah(harga);
-		  });
-	  
-		  // Saat klik tombol "Perbarui Keranjang"
-		  perbaruiBtn.addEventListener('click', function (e) {
-			e.preventDefault(); // supaya tidak reload halaman
-	  
-			const jumlah = parseFloat(jumlahInput.value) || 0;
-			const subtotal = jumlah * hargaPerKg;
-			const total = subtotal + ongkir;
-	  
-			subtotalTd.textContent = 'Rp ' + formatRupiah(subtotal);
-			totalTd.textContent = 'Rp ' + formatRupiah(total);
-	  
-			// Simpan data ke localStorage
-			const keranjang = {
-			  namaProduk: 'Telur',
-			  jumlah,
-			  harga: jumlah * hargaPerKg,
-			  subtotal,
-			  ongkir,
-			  total
-			};
-			localStorage.setItem('keranjangTelur', JSON.stringify(keranjang));
-		  });
-	  
-		  // Redirect ke halaman checkout.html
-		  checkoutBtn.addEventListener('click', function (e) {
-			e.preventDefault();
-			window.location.href = 'checkout.html';
-		  });
-	  
-		  // Fungsi untuk format angka ke rupiah
-		  function formatRupiah(angka) {
-			return angka.toLocaleString('id-ID');
-		  }
-		});
-	  </script>
-	  
-	  
-	  
-	  
+	
 </body>
 </html>

@@ -5,10 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- title -->
-	<title>Shop</title>
+	<!-- Judul -->
+	<title>Telur Ayam Negeri Aceh</title>
 
-	<!-- favicon -->
+	<!-- Buat CSS -->
 	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -49,7 +49,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -60,21 +60,16 @@
 							<ul>
 								<li class="current-list-item"><a href="#">Home</a>
 									<ul class="sub-menu">
-								<li><a href="index.html">Slider Home</a></li>
+								<li><a href="index.php">Slider Home</a></li>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
+								<li><a href="about.php">About</a></li>
+								<li><a href="contact.php">Contact</a></li>
+								<li><a href="cart.php">Cart</a>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -89,7 +84,7 @@
 		</div>
 	</div>
 	<!-- end header -->
-
+	
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
@@ -107,72 +102,193 @@
 			</div>
 		</div>
 	</div>
-	<!-- end search arewa -->
-	
-	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section breadcrumb-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="breadcrumb-text">
-						<p>Fresh and Organic</p>
-						<h1>Shop</h1>
+	<!-- end search area -->
+
+	<!-- home page slider -->
+	<div class="homepage-slider">
+		<!-- single home slider -->
+		<div class="single-homepage-slider homepage-bg-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
+						<div class="hero-text">
+							<div class="hero-text-tablecell">
+								<p class="subtitle">Fresh & Organik</p>
+								<h1>Telur Ayam Negeri Aceh</h1>
+								<div class="hero-btns">
+									<a href="cart.php" class="boxed-btn">Telur</a>
+									<a href="contact.php" class="bordered-btn">Contact Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- single home slider -->
+		<div class="single-homepage-slider homepage-bg-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 text-center">
+						<div class="hero-text">
+							<div class="hero-text-tablecell">
+								<p class="subtitle">Segar Setiap Hari</p>
+								<h1>100% Organik</h1>
+								<div class="hero-btns">
+									<a href="cart.php" class="boxed-btn">Visit Shop</a>
+									<a href="contact.php" class="bordered-btn">Contact Us</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- single home slider -->
+		<div class="single-homepage-slider homepage-bg-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 offset-lg-1 text-right">
+						<div class="hero-text">
+							<div class="hero-text-tablecell">
+								<p class="subtitle">Mega Sale Desember!</p>
+								<h1>Diskon Spesial Menanti Kamu</h1>
+								<div class="hero-btns">
+									<a href="cart.php" class="boxed-btn">Visit Shop</a>
+									<a href="contact.php" class="bordered-btn">Contact Us</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end breadcrumb section -->
+	<!-- end home page slider -->
 
-	<!-- products -->
-	<div class="product-section mt-150 mb-150">
+	<!-- features list section -->
+	<div class="list-section pt-80 pb-80">
 		<div class="container">
 
 			<div class="row">
-                <div class="col-md-12">
-                    <div class="product-filters">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-shipping-fast"></i>
+						</div>
+						<div class="content">
+							<h3>Gratis Ongkir</h3>
+							<p>saat pembelian diatas Rp 200.000 </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-phone-volume"></i>
+						</div>
+						<div class="content">
+							<h3>24/7 Service</h3>
+							<p>Dapatkan service yang terbaik 24 jam</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="list-box d-flex justify-content-start align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-sync"></i>
+						</div>
+						<div class="content">
+							<h3>Pengembalian</h3>
+							<p>Dapatkan pengembalian dalam 3 hari!</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-			<div class="row product-lists">
-				<div class="col-lg-4 col-md-6 text-center strawberry">
+		</div>
+	</div>
+	<!-- end features list section -->
+
+	<!-- product section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Produk</span> Kami</h3>					
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
 							<img src="assets/img/products/product-img-1.jpg" alt=""></a>
 						</div>
 						<h3>Telur</h3>
-						<p class="product-price"><span>5 Kg</span> Rp 57.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<p class="product-price"><span>5 Kg</span> Rp 155.000  </p>
+						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center berry">
+				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
 							<img src="assets/img/products/product-img-2.jpg" alt=""></a>
 						</div>
 						<h3>Telur</h3>
-						<p class="product-price"><span>10 Kg</span> Rp 145.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<p class="product-price"><span>10 Kg</span> Rp 310.000 </p>
+						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center lemon">
+				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
 							<img src="assets/img/products/product-img-3.jpg" alt=""></a>
 						</div>
 						<h3>Telur</h3>
-						<p class="product-price"><span>15 Kg</span> Rp 220.000 </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<p class="product-price"><span>15 Kg</span> Rp 465.000 </p>
+						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end products -->
+	<!-- end product section -->
+
+	<!-- advertisement section -->
+	<div class="abt-section mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-bg">
+						<a href="https://www.youtube.com/watch?v=DBLlFWYcIGQ" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="abt-text">
+						<p class="top-sub">Sejak Tahun 2020</p>
+						<h2>Kami  <span class="orange-text">Supplier Telur Ayam Negeri Aceh</span></h2>
+						<p>Kami adalah supplier telur ayam negeri Aceh terpercaya di Bandung, menyediakan telur 
+							segar berkualitas tinggi dengan harga terbaik.</p>
+						<a href="about.php" class="boxed-btn mt-4">Lihat Detail</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end advertisement section -->
+	
+	<!-- shop banner -->
+	<section class="shop-banner">
+    	<div class="container">
+        	<h3>Penawaran Spesial Akhir Tahun <br> dengan diskon <span class="orange-text">BESAR...</span></h3>
+            <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
+            <a href="shop.php" class="cart-btn btn-lg">Shop Now</a>
+        </div>
+    </section>
+	<!-- end shop banner -->
 
 	<!-- logo carousel -->
 	<div class="logo-carousel-section">
@@ -227,9 +343,9 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index.php">Home</a></li>
+							<li><a href="about.php">About</a></li>
+							<li><a href="contact.php">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -243,7 +359,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2025 - <a href="https://piktonn.github.io/my-portofolio/">Victon Tanaka</a>,  All Rights Reserved.<br> </p>
+					<p>Copyrights &copy; 2025 - Supplier Telur Ayam Negeri Aceh</a>,  All Rights Reserved.<br> </p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
