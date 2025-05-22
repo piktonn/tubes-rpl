@@ -136,8 +136,16 @@
                                 </h5>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    <table class="table table-bordered order-summary mx-auto"> <!-- Menambahkan mx-auto untuk memusatkan tabel -->
+    							<div class="card-body">
+        							<table class="table table-bordered order-summary mx-auto">
+            							<tr>
+                							<th>Nama Lengkap</th>
+                								<td id="nama-lengkap"></td>
+           								 </tr>
+           								 <tr>
+              								<th>Nomor Telepon</th>
+                								<td id="nomor-telepon"></td>
+            							</tr>
                                         <tr>
                                             <th>Produk</th>
                                             <td>Telur Ayam Negeri</td>
@@ -164,13 +172,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Bagian Pilih Metode Pembayaran -->
-                    <div class="payment-method mt-4">
+
+  <!-- Bagian Pilih Metode Pembayaran -->
+  <div class="payment-method mt-4">
                         <h5>💳 Pilih Metode Pembayaran:</h5>
 						<div class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="qris" value="qris">
-                            <label class="form-check-label" for="qris">
-                                QRIS
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="cod">
+                            <label class="form-check-label" for="cod">
+                                Cash on Delivery (COD)
                             </label>
                         </div>
                         <div class="form-check">
@@ -179,16 +188,22 @@
                                 Transfer Bank
                             </label>
                         </div>
+						<div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="wallet" value="wallet">
+                            <label class="form-check-label" for="wallet">
+                                E-wallet
+                            </label>
+                        </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="paymentMethod" id="cod" value="cod">
-                            <label class="form-check-label" for="cod">
-                                Cash on Delivery (COD)
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="qris" value="qris">
+                            <label class="form-check-label" for="qris">
+                                QRIS
                             </label>
                         </div>
                     </div>
                     <!-- Tombol Konfirmasi -->
                     	<div class="cart-buttons">
-						<a href="cart.html#cart-section" class="boxed-btn">Edit Pesanan</a>
+						<a href="cart.html" class="boxed-btn">Edit Pesanan</a>
 						<a href="selesai.html" class="boxed-btn">Konfirmasi dan Pesan</a>
 						</div>
                 </div>
@@ -312,6 +327,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const ongkir = localStorage.getItem('ongkir') || '0';
     const total = localStorage.getItem('total') || '0';
 
+    // Ambil data nama dan telepon
+    const nama = localStorage.getItem('nama') || '-';
+    const telepon = localStorage.getItem('telepon') || '-';
+
     // Ubah format ke Rupiah
     const formatRupiah = (angka) => {
         return parseInt(angka).toLocaleString('id-ID', {
@@ -320,14 +339,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Isi elemen-elemen di halaman checkout
+    // Isi elemen-elemen checkout
     document.getElementById('jumlah-produk').textContent = jumlah + ' kg';
     document.getElementById('checkout-subtotal').textContent = formatRupiah(subtotal);
     document.getElementById('checkout-ongkir').textContent = formatRupiah(ongkir);
     document.getElementById('checkout-total').textContent = formatRupiah(total);
+
+    // Isi nama dan nomor telepon
+    const namaElement = document.getElementById('nama-lengkap');
+    const teleponElement = document.getElementById('nomor-telepon');
+
+    if (namaElement) namaElement.textContent = nama;
+    if (teleponElement) teleponElement.textContent = telepon;
 });
 </script>
-
 
 </body>
 </html>

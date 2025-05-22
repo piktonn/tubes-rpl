@@ -139,7 +139,7 @@
 						<tr>
 							<td><img src="assets/img/products/product-img-1.jpg" width="80" alt="Telur Ayam"></td>
 							<td>Telur Ayam Negeri</td>
-							<td>Rp <span id="hargaSatuan">31.000</span></td>
+							<td>Rp <span id="hargaSatuan">30.000</span></td>
 							<td><input type="number" id="jumlahInput" value="0" min="0" class="form-control w-50"></td>
 						</tr>
 					</tbody>
@@ -312,29 +312,22 @@
 	<script src="assets/js/main.js"></script>
 
 	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-    // Mendapatkan referensi ke elemen radio button metode pengambilan
+document.addEventListener('DOMContentLoaded', function () {
+    // Fungsi toggle alamat
     const ambilSendiriRadio = document.querySelector('input[value="ambil"]');
     const diantarRadio = document.querySelector('input[value="diantar"]');
-    
-    // Mendapatkan referensi ke container alamat pengiriman
     const alamatContainer = document.getElementById('alamatContainer');
-    
-    // Fungsi untuk menampilkan atau menyembunyikan alamat pengiriman
+
     function toggleAlamatPengiriman() {
         if (diantarRadio.checked) {
-            // Jika opsi Diantar dipilih, tampilkan alamat pengiriman
             alamatContainer.style.display = 'block';
-            // Ubah warna tombol menjadi biru jika ada
             const updateButton = document.querySelector('.perbarui-keranjang');
             if (updateButton) {
                 updateButton.classList.remove('btn-warning', 'btn-orange');
                 updateButton.classList.add('btn-primary', 'btn-blue');
             }
         } else {
-            // Jika opsi Ambil Sendiri dipilih, sembunyikan alamat pengiriman
             alamatContainer.style.display = 'none';
-            // Ubah warna tombol menjadi oranye jika ada
             const updateButton = document.querySelector('.perbarui-keranjang');
             if (updateButton) {
                 updateButton.classList.remove('btn-primary', 'btn-blue');
@@ -342,98 +335,47 @@
             }
         }
     }
-    
-    // Menambahkan event listener untuk radio button
-    if (ambilSendiriRadio) {
-        ambilSendiriRadio.addEventListener('change', toggleAlamatPengiriman);
-    }
-    
-    if (diantarRadio) {
-        diantarRadio.addEventListener('change', toggleAlamatPengiriman);
-    }
-    
-    // Jalankan fungsi saat halaman dimuat untuk mengatur tampilan awal
-    toggleAlamatPengiriman();
-});
 
+    if (ambilSendiriRadio) ambilSendiriRadio.addEventListener('change', toggleAlamatPengiriman);
+    if (diantarRadio) diantarRadio.addEventListener('change', toggleAlamatPengiriman);
 
-// Fungsi untuk notifikasi dan tombol Perbarui Keranjang
+    toggleAlamatPengiriman(); // tampilkan sesuai default saat load
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Radio button event listeners untuk alamat pengiriman
-    const ambilSendiriRadio = document.getElementById('ambilSendiri');
-    const diantarRadio = document.getElementById('diantar');
-    const alamatContainer = document.getElementById('alamatContainer');
-    
-    // Toggle alamat pengiriman saat radio button diubah
-    if (ambilSendiriRadio && diantarRadio) {
-        ambilSendiriRadio.addEventListener('change', function() {
-            alamatContainer.style.display = 'none';
-        });
-        
-        diantarRadio.addEventListener('change', function() {
-            alamatContainer.style.display = 'block';
-        });
+    // Toggle ulang untuk id khusus
+    const ambilSendiriRadioById = document.getElementById('ambilSendiri');
+    const diantarRadioById = document.getElementById('diantar');
+    if (ambilSendiriRadioById && diantarRadioById) {
+        ambilSendiriRadioById.addEventListener('change', () => alamatContainer.style.display = 'none');
+        diantarRadioById.addEventListener('change', () => alamatContainer.style.display = 'block');
     }
-    
-    // Mendapatkan referensi ke tombol Perbarui Keranjang
+
+    // Perbarui keranjang
     const perbaruiButton = document.querySelector('.cart-buttons .boxed-btn:not(.black)');
-    
     if (perbaruiButton) {
-        perbaruiButton.addEventListener('click', function(e) {
-            e.preventDefault(); // Mencegah navigasi ke cart.php
-            
-            // Hitung total, subtotal, dan ongkir saat tombol diklik
+        perbaruiButton.addEventListener('click', function (e) {
+            e.preventDefault();
             const jumlahInput = document.getElementById('jumlahInput');
             const hargaSatuan = document.getElementById('hargaSatuan');
             const subtotalElement = document.getElementById('subtotal');
             const ongkirElement = document.getElementById('ongkir');
             const totalElement = document.getElementById('total');
-            const jumlahElement = document.getElementById('jumlah'); // Element untuk menyimpan jumlah
-            
+            const jumlahElement = document.getElementById('jumlah');
+
             const harga = parseInt(hargaSatuan.textContent.replace(/\D/g, ''));
             const jumlah = parseInt(jumlahInput.value) || 0;
             const subtotal = harga * jumlah;
-            
-            // Update subtotal
+
             subtotalElement.textContent = subtotal.toLocaleString('id-ID');
-            
-            // Update ongkir
             const ongkir = diantarRadio.checked ? 10000 : 0;
             ongkirElement.textContent = ongkir.toLocaleString('id-ID');
-            
-            // Update total
-            const total = subtotal + ongkir;
-            totalElement.textContent = total.toLocaleString('id-ID');
-            
-            // Update elemen jumlah yang tersembunyi
+            totalElement.textContent = (subtotal + ongkir).toLocaleString('id-ID');
             jumlahElement.textContent = jumlah;
-            
-            // Buat overlay gelap di belakang notifikasi
+
             const overlay = document.createElement('div');
-            overlay.style.position = 'fixed';
-            overlay.style.top = '0';
-            overlay.style.left = '0';
-            overlay.style.width = '100%';
-            overlay.style.height = '100%';
-            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            overlay.style.zIndex = '999';
-            
-            // Buat elemen notifikasi
+            overlay.style.cssText = `position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:999;`;
+
             const notifikasi = document.createElement('div');
-            notifikasi.style.position = 'fixed';
-            notifikasi.style.top = '50%';
-            notifikasi.style.left = '50%';
-            notifikasi.style.transform = 'translate(-50%, -50%)';
-            notifikasi.style.backgroundColor = '#1E1E1E';
-            notifikasi.style.color = 'white';
-            notifikasi.style.padding = '20px';
-            notifikasi.style.borderRadius = '10px';
-            notifikasi.style.zIndex = '1000';
-            notifikasi.style.width = '300px';
-            notifikasi.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-            
-            // Isi notifikasi
+            notifikasi.style.cssText = `position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background-color:#1E1E1E;color:white;padding:20px;border-radius:10px;z-index:1000;width:300px;box-shadow:0 4px 8px rgba(0,0,0,0.2);`;
             notifikasi.innerHTML = `
                 <div style="margin-bottom: 15px;">
                     <div style="font-size: 18px; color: #ccc;">localhost says</div>
@@ -441,55 +383,46 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div style="text-align: right;">
                     <button class="ok-button" style="background-color: #64D2FF; color: black; border: none; padding: 8px 25px; border-radius: 20px; cursor: pointer;">OK</button>
-                </div>
-            `;
-            
-            // Tambahkan overlay dan notifikasi ke body
+                </div>`;
+
             document.body.appendChild(overlay);
             document.body.appendChild(notifikasi);
-            
-            // Event listener untuk tombol OK
-            const okButton = notifikasi.querySelector('.ok-button');
-            okButton.addEventListener('click', function() {
+
+            notifikasi.querySelector('.ok-button').addEventListener('click', function () {
                 notifikasi.remove();
                 overlay.remove();
             });
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', function () {
+    // Tombol Checkout — Simpan data ke localStorage
     const checkoutButton = document.querySelector('.cart-buttons .boxed-btn.black');
-
     if (checkoutButton) {
-        checkoutButton.addEventListener('click', function (e) {
-            // Pastikan jumlah diambil dari input langsung, bukan dari span
+        checkoutButton.addEventListener('click', function () {
             const jumlahInput = document.getElementById('jumlahInput');
             const jumlah = jumlahInput ? jumlahInput.value : "0";
-            
-            // Perbarui span jumlah untuk memastikan nilai terbaru tersimpan
             const jumlahElement = document.getElementById('jumlah');
-            if (jumlahElement) {
-                jumlahElement.textContent = jumlah;
-            }
-            
-            // Ambil nilai dari elemen lain
+            if (jumlahElement) jumlahElement.textContent = jumlah;
+
             const subtotal = document.getElementById('subtotal').textContent.replace(/\./g, '').replace(/,/g, '');
             const ongkir = document.getElementById('ongkir').textContent.replace(/\./g, '').replace(/,/g, '');
             const total = document.getElementById('total').textContent.replace(/\./g, '').replace(/,/g, '');
 
-            // Simpan ke localStorage
             localStorage.setItem('subtotal', subtotal);
             localStorage.setItem('ongkir', ongkir);
             localStorage.setItem('total', total);
             localStorage.setItem('jumlah', jumlah);
 
-            // Tidak perlu redirect jika tombol adalah link (<a href>)
-            // window.location.href = "checkout.php";
+            // Ambil nama & telepon
+            const nama = document.getElementById('nama')?.value || '';
+            const telepon = document.getElementById('telepon')?.value || '';
+            localStorage.setItem('nama', nama);
+            localStorage.setItem('telepon', telepon);
         });
     }
 });
 </script>
+
 
 </body>
 </html>
